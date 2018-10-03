@@ -1,16 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
+import { VideosComponent } from './videos.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    VideosComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [VideosComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    const el = createCustomElement(VideosComponent, { injector });
+    customElements.define('multi-video', el);
+  }
+
+  ngDoBootstrap() { }
+}
