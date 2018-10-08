@@ -1,4 +1,4 @@
-# Multi-video
+# Multi-video 🎥
  > Custom component for displaying multiple videos in sync
 ## Building
 
