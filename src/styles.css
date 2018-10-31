@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+.super-container {
+    width: 878px;
+    height: 599px;
+}
+
+.videos-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    background-color: #0e0e0e;
+}
+
+.background-image {
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+
+.full-screen {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}

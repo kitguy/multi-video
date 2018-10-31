@@ -5,10 +5,17 @@
     <title>Multi-video DEMO</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <multi-video name="asassasasa" source="http://techslides.com/demos/sample-videos/small.mp4"></multi-video>
+    <h1>teste</h1>
+    <multi-video id="mv" background="http://i68.tinypic.com/20zae12.png"></multi-video>
     <script type="text/javascript" src="multi-video.js"></script>
+    <script>
+      document.getElementById('mv').videos = [
+        {url: 'http://techslides.com/demos/sample-videos/small.mp4', id: 'video1'},  
+        {url: 'http://techslides.com/demos/sample-videos/small.mp4', id: 'video2'}
+      ];
+    </script>
   </body>
 </html>

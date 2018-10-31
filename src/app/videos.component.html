@@ -1,1 +1,26 @@
-<video width="320" [src]="source" height="240" controls></video>
+<div class="super-container" *ngIf="videos.length">
+        <vg-player class="videos-container" (onPlayerReady)="onPlayerReady($event)">
+            <vg-controls [vgAutohide]="true">
+                <vg-play-pause></vg-play-pause>
+    
+                <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+    
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                </vg-scrub-bar>
+    
+                <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+    
+                <vg-fullscreen></vg-fullscreen>
+            </vg-controls>
+
+            <video (pause)="onVideoPaused($event)" (ended)="onVideoEnded($event)" (click)="onVideoClicked($event)"
+                *ngFor="let video of videos; let i = index" [src]="video.url" [vgMedia]="teste" #teste  [id]="video.id"
+                preload="auto" style="object-fit: fill">
+            </video>
+            <div class="background-image" [style.background]="'url('+background+')'" *ngFor="let qt of remainingSlots"></div>
+    
+        </vg-player>
+    
+    </div>
